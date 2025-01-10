@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@auth/core": "^0.34.2",
-    "@auth/nextjs": "^0.0.0-380f8d56",
     "bcryptjs": "^2.4.3",
     "better-sqlite3": "^11.7.2",
     "next": "15.1.4",
