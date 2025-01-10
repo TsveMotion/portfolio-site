@@ -37,11 +37,18 @@ export default function Contact() {
       } else {
         throw new Error('Failed to send message');
       }
-    } catch (error) {
-      setStatus({
-        type: 'error',
-        message: 'Failed to send message. Please try again later.'
-      });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setStatus({
+          type: 'error',
+          message: error.message
+        });
+      } else {
+        setStatus({
+          type: 'error',
+          message: 'Failed to send message. Please try again.'
+        });
+      }
     }
   };
 

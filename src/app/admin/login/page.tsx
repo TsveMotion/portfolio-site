@@ -27,8 +27,12 @@ export default function Login() {
         router.push(callbackUrl);
         router.refresh();
       }
-    } catch (error) {
-      setError('An error occurred. Please try again.');
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError('An error occurred. Please try again.');
+      }
     }
   };
 

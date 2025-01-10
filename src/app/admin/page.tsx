@@ -14,7 +14,7 @@ interface Message {
 }
 
 export default function Admin() {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);
